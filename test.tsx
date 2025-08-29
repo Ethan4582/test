@@ -2,8 +2,7 @@
 
 import { Info } from "lucide-react";
 import { Loader2 } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-import { useForm } from "react-hook-form";
+
 import { toast } from "sonner";
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
