@@ -7,13 +7,6 @@ import { db } from '~/server/db';
 import { Octokit } from 'octokit';
 
 
-// recursive function to check the count of the file 
-const getFileCount = async (path: string, octokit: Octokit, githubOwner: string, githubRepo: string, acc: number = 0) => {
-    const { data } = await octokit.rest.repos.getContent({
-        owner: githubOwner,
-        repo: githubRepo,
-        path
-    })
     if (!Array.isArray(data) && data.type === 'file') {
         return acc + 1
     }
