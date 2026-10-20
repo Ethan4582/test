@@ -5,25 +5,7 @@ import { Loader2 } from "lucide-react";
 
 import { toast } from "sonner";
 import { Button } from "~/components/ui/button";
-import { Input } from "~/components/ui/input";
-import useRefetch from "~/hooks/use-refetch";
-import { api } from "~/trpc/react";
 
-type FormInput = {
-  repoUrl: string;
-  projectName: string;
-  githubToken?: string;
-};
-
-export default function CreatePage() {
-  const { register, handleSubmit, reset } = useForm<FormInput>();
-  const checkCredits = api.project.checkCredits.useMutation();
-  const createProject = api.project.createProject.useMutation();
-  const refetch = useRefetch()
-
-  function onSubmit(data: FormInput) {
-
-    if(!!checkCredits.data){
       createProject.mutate({
       name: data.projectName,
       repoUrl: data.repoUrl,
