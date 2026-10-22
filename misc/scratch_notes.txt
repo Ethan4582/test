@@ -1,0 +1,5 @@
+- do_everything.js does queue + invoices + stats + server now, maybe split later
+- stripe key not in env on prod box? ask
+- export_final_v2_FINAL is the one we use, the other export script is old
+- TODO move invoice code out
+- db_stuff.ts and db_stuff.js both exist?? check
